@@ -1,14 +1,14 @@
-from typing import Optional
-
 from fastapi import FastAPI
+from .routers import student
+from . import models
+from .database import engine
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
+def root():
+    return {"message": "Welcome to my api!"}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+app.include_router(student.router)

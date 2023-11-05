@@ -108,5 +108,4 @@ venv.bak/
 .DS_Store
 
 .vscode
-database.py
 req.txt

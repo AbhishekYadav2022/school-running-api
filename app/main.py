@@ -24,6 +24,7 @@ from .routers.fees import (
     other_fees_record,
     exam_details,
 )
+from .routers.all_registers import emp_payment_register
 from .database import engine
 from .models import model
 
@@ -57,3 +58,4 @@ app.include_router(other_fees_record.router)
 app.include_router(student_class.router)
 app.include_router(emp_payment_record.router)
 app.include_router(exam_details.router)
+app.include_router(emp_payment_register.router)

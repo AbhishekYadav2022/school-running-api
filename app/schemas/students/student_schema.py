@@ -16,6 +16,7 @@ class CreateStudent(BaseModel):
 class GetStudent(BaseModel):
     id: int
     last_name: str
+    first_name: str
     father_name: str
     mother_name: str
     phone: str

@@ -1,12 +1,13 @@
 from pydantic_settings import BaseSettings
 
-class Setting(BaseSettings):
-    HOSTNAME: str
-    PASSWORD: str
-    DATABASE: str
-    USERNAME: str
+class Settings(BaseSettings):
+    database_username: str
+    database_password: str
+    database_hostname: str
+    database_name: str
 
     class Config:
         env_file = ".env"
 
-settings = Setting()
+
+settings = Settings()

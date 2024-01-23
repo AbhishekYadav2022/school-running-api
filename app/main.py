@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from .config import settings
 from .routers.employees import (
     employee,
     department,
@@ -35,7 +36,12 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to my api!"}
+    return {
+        "username": settings.database_username,
+        "password": settings.database_password,
+        "hostname": settings.database_hostname,
+        "database": settings.database_name,
+    }
 
 
 app.include_router(employee.router)

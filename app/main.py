@@ -37,10 +37,7 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {
-        "username": settings.database_username,
-        "password": settings.database_password,
-        "hostname": settings.database_hostname,
-        "database": settings.database_name,
+        "message":"👋Hello, How are you?"
     }
 
 
